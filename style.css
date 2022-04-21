@@ -1,0 +1,7 @@
+.bodyBackground {
+  position: fixed;
+  min-width: 100%;
+  height: auto;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
