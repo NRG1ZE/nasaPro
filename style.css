@@ -1,7 +1,14 @@
 .bodyBackground {
   position: fixed;
   min-width: 100%;
-  height: auto;
-  margin-top: 5vh;
-  margin-bottom: 10vh;
+  height: 800px;
+  margin-top: 10vh;
+}
+.fill {
+  object-fit: cover;
+}
+.bodyFoot {
+  background-color: darkgrey;
+
+  margin-top: 90vh;
 }
