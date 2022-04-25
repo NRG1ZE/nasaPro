@@ -28,48 +28,48 @@ APOD-Astronomy Picture of The Day
     False	Return the URL of video thumbnail. If an APOD is not a video, this parameter is ignored.
 */
 
-// const autoCompleteConfig = {
-//   renderOption(Image) {
-//     const imgSrc = Image.poster === "N/A" ? "" : Image.Poster;
-//     return `
-//       <img src="${imgSrc}"/>
-//       ${Image.Title} (${Image.Year})
-//     `;
-//   },
+const autoCompleteConfig = {
+  renderOption(Image) {
+    const imgSrc = Image.poster === "N/A" ? "" : Image.Poster;
+    return `
+      <img src="${imgSrc}"/>
+      ${Image.Title} (${Image.Year})
+    `;
+  },
 
-//   inputValue(Image) {
-//     return Image.Title;
-//   },
-//   async fetchData(searchTerm) {
-//     const response = await axios.get("https://api.nasa.gov/planetary/apod", {
-//       params: {
-//         apikey: "MrrxfBkRraKb7d6DrQd6eShpll6SJFmELArFjzP6",
-//         s: searchTerm,
-//       },
-//     });
+  inputValue(Image) {
+    return Image.Title;
+  },
+  async fetchData(searchTerm) {
+    const response = await axios.get("https://api.nasa.gov/planetary/apod", {
+      params: {
+        apikey: "MrrxfBkRraKb7d6DrQd6eShpll6SJFmELArFjzP6",
+        s: searchTerm,
+      },
+    });
 
-//     if (response.data.Error) return [];
+    if (response.data.Error) return [];
 
-//     return response.data.Search;
-//   },
-// };
+    return response.data.Search;
+  },
+};
 
-// createAutoComplete({
-//   ...autoCompleteConfig,
-//   root: document.querySelector("#autocomplete"),
-//   onOptionSelect(Image) {
-//     document.querySelector(".tutorial").classList.add("is-hidden");
-//     onImageSelect(Image, document.querySelector("#summary"));
-//   },
-// });
+createAutoComplete({
+  ...autoCompleteConfig,
+  root: document.querySelector("#autocomplete"),
+  onOptionSelect(Image) {
+    document.querySelector(".tutorial").classList.add("is-hidden");
+    onImageSelect(Image, document.querySelector("#summary"));
+  },
+});
 
-// const onImageSelect = async (Image, summaryElement) => {
-//   const response = await axios.get("https://api.nasa.gov/planetary/apod", {
-//     params: {
-//       apikey: "MrrxfBkRraKb7d6DrQd6eShpll6SJFmELArFjzP6",
-//       i: Image.response,
-//     },
-//   });
+const onImageSelect = async (Image, summaryElement) => {
+  const response = await axios.get("https://api.nasa.gov/planetary/apod", {
+    params: {
+      apikey: "MrrxfBkRraKb7d6DrQd6eShpll6SJFmELArFjzP6",
+      i: Image.response,
+    },
+  });
 
-//   summaryElement.innerHTML = ImageTemplate(response.data);
-// };
+  summaryElement.innerHTML = ImageTemplate(response.data);
+};
