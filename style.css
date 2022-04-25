@@ -1,14 +1,16 @@
-.bodyBackground {
+.bodyHead {
+  position: relative;
+  margin-top: 0%;
+  height: 5vh;
+}
+.bodyMainImage {
   position: fixed;
+  height: 90%;
   min-width: 100%;
-  height: 800px;
-  margin-top: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
-.fill {
-  object-fit: cover;
-}
-.bodyFoot {
-  background-color: darkgrey;
 
-  margin-top: 90vh;
+.bodyFoot {
+  background-color: aqua;
 }
