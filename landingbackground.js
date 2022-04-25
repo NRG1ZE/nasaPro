@@ -6,6 +6,15 @@ Example request:
 https://api.nasa.gov/planetary/apod?api_key=SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp
 Debug-https://api.nasa.gov/planetary/apod?date=2022-04-21&apikey=SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp
 */
+//INTIATE FORM DATA
+const creasteSearchForm = document.body;
+const form = `<div type="form" class="searchInput">
+                <form id="keywordSearchBar">
+                  <input id="keywordInput" type="text" class="" />
+                   <button id="keywordButton"></button>
+                </form>
+              </div>`;
+
 //let background = document.querySelector("img");
 // background.style.minHeight = window.innerHeight;
 // background.style.minWidth = window.innerWidth;
