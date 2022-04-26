@@ -1,16 +1,33 @@
-.bodyHead {
-  position: relative;
-  margin-top: 0%;
-  height: 5vh;
-}
-.bodyMainImage {
-  position: fixed;
-  height: 90%;
-  min-width: 100%;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
 
-.bodyFoot {
-  background-color: aqua;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex: content;
+  flex-direction: row;
+}
+#head {
+  min-width: 100%;
+  min-height: 5vh;
+
+  padding: 5%;
+}
+#headIcon {
+  position: absolute;
+}
+#bodyCenter {
+  display: flex;
+  min-width: 100%;
+  min-height: 90vh;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+}
+#foot {
+  min-width: 100%;
+  min-height: 5h;
+  padding: 5%;
 }
