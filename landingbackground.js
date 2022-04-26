@@ -7,21 +7,25 @@ https://api.nasa.gov/planetary/apod?api_key=SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xq
 Debug-https://api.nasa.gov/planetary/apod?date=2022-04-21&apikey=SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp
 */
 //INTIATE FORM DATA
-const creasteSearchForm = document.body;
+const website = document.body;
 const form = `<div type="form" class="searchInput">
                 <form id="keywordSearchBar">
                   <input id="keywordInput" type="text" class="" />
                    <button id="keywordButton"></button>
                 </form>
               </div>`;
-
+// const webBody = document.getElementById("bodyCenter");
+// let height = window.innerHeight;
+// let width = window.innerWidth;
+// webBody.height = height * 0.7;
 //let background = document.querySelector("img");
 // background.style.minHeight = window.innerHeight;
 // background.style.minWidth = window.innerWidth;
-let imageToFill = document.querySelector("img");
-imageToFill.style.minHeight = window.innerHeight;
-imageToFill.style.minWidth = window.innerWidth;
-imageToFill.style.aspectRatio = "auto";
+// let imageToFill = document.querySelector("img");
+// imageToFill.style.minHeight = window.innerHeight;
+// imageToFill.style.minWidth = window.innerWidth;
+
+// imageToFill.style.aspectRatio = "auto";
 //  fill- This is default. The image is resized to fill the given dimension. If necessary, the image will be stretched or squished to fit
 // contain - The image keeps its aspect ratio, but is resized to fit within the given dimension
 // cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit
@@ -47,7 +51,8 @@ const fetchData = async () => {
   });
 
   //if (response.data.Error) return [];
-  imageToFill.src = response.data.url;
+  //imageToFill.src
+  website.style.backgroundImage = `url(${response.data.url})`;
   console.log(response.data);
 };
 fetchData();
