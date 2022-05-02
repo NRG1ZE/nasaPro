@@ -8,21 +8,22 @@ Debug-https://api.nasa.gov/planetary/apod?date=2022-04-21&apikey=SMcnNJzngrlKyVH
 */
 
 // Create a match function
-function mViewport(x) {
-  if (x.matches) {
-    document
-      .getElementById("myViewport")
-      .setAttribute("content", "width=device-width, height=device-height");
-  }
-}
+// function mViewport(x) {
+//   if (x.matches) {
+//     document
+//       .getElementById("myViewport")
+//       .setAttribute("content", "width=device-width, height=device-height");
+//   }
+// }
 
-// // Create a MediaQueryList object
-const viewportShift = this.matchMedia("(max-width: 700px)");
+// // // Create a MediaQueryList object
+// const viewportShift = this.matchMedia("(max-width: 700px)");
 
-// Call the match function at run time:
-mViewport(viewportShift);
+// // Call the match function at run time:
+// mViewport(viewportShift);
 
 const website = document.body;
+
 const form = `<div type="form" class="searchInput">
                 <form id="keywordSearchBar">
                   <input id="keywordInput" type="text" class="" />
