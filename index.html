@@ -4,29 +4,19 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <!---axios src ^^^ --->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <meta id="myViewport" name="myViewport" content="width=device-width" />
   </head>
   <body>
-    <div id="head">
-      <p>I am the Head</p>
-      <div id="headIcon"></div>
-      <div id="headSearchbar"></div>
-    </div>
-    <div id="bodyCenter">
-      <p>I am the Body</p>
-      <div id="bodyMain">
-        <h1>NASA IMAGE WIKI</h1>
+    <div id="content">
+      <div id="head" class="initialHeader">
+        <h1 id="titleAboveIntSearchBar" class="initialH1">NASA IMAGE WIKI</h1>
+        <form></form>
+      </div>
+      <div id="resultsContainer" class="beforeResults">
+        <p>I am the Results</p>
       </div>
     </div>
-    <div id="foot">
-      <p>I am the Credits</p>
-    </div>
-    <script src="responsiveCSS.js"></script>
     <script src="landingbackground.js"></script>
   </body>
 </html>
