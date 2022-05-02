@@ -1,40 +1,25 @@
-@media (max-width: 759px) {
-  body {
-    background-repeat: repeat;
-  }
+body {
+  min-height: 100vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 2px;
 }
-@media (min-width: 760px) {
-  body {
-    min-height: 100vh;
-    min-width: 100vw;
+#content {
+  min-width: 100%;
+  min-height: 100%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+.initialHeader {
+  visibility: visible;
+}
+.afterSearchHeader {
+  visibility: hidden;
+}
+#head {
+  min-width: 100%;
+}
 
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    flex: content;
-    flex-direction: row;
-  }
-  #head {
-    min-width: 100%;
-    min-height: 5vh;
-
-    padding: 5%;
-  }
-  #headIcon {
-    position: absolute;
-  }
-  #bodyCenter {
-    display: flex;
-    min-width: 100%;
-    min-height: 90vh;
-    padding-top: 40%;
-    padding-bottom: 40%;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-items: center;
-  }
-  #foot {
-    min-width: 100%;
-    min-height: 5h;
-    padding: 5%;
-  }
+#foot {
+  min-width: 100%;
 }
