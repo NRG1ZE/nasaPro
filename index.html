@@ -12,28 +12,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="content" class="container-FlexContentVertical">
-      <div id="SearchBar" class="initialSearchForm container-FlexContentVertical">
+    <section id="content" class="">
+      <div id="SearchBar" class="">
         <form
           id="autoCompleteSearchBar"
-          class="initialForm container-FlexContentVertical"
+          class=""
         >
-          <div id="titleContainer" class="initialH1">
+          <div id="titleContainer" class="container">
             <h1 >NASA IMAGE WIKI</h1>
           </div>
-          <div class="searchBarContainer container-FlexContentHorizontal">
-            <input id="autoCompleteTextInput" type="text" />
-            <input id="autoCompleteButtonInput"type="button" value="Discover"></input>
+          <div id="searchBarContainer"class="level">
+            <div id="textContainer" class="level-left">
+              <input id="autoCompleteTextInput" type="text" class="input is-rounded is-large"/>
+            </div>
+            <div id="buttonContainer" class="level-right">
+             <input id="autoCompleteButtonInput"type="button" value="Discover" class="button is-large"></input> 
+            </div>
+            
           </div>
         </form>
       </div>
 
       <div
         id="resultsContainer"
-        class="beforeSearch container-ContentWrapHorizontal"
+        class=""
       >
       </div>
     </section>
     <script src="landingbackground.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
