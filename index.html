@@ -4,42 +4,82 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <!---axios src ^^^ --->
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="content" class="">
-      <div id="SearchBar" class="">
-        <form
-          id="autoCompleteSearchBar"
-          class=""
-        >
-          <div id="titleContainer" class="container">
-            <h1 >NASA IMAGE WIKI</h1>
-          </div>
-          <div id="searchBarContainer"class="level">
-            <div id="textContainer" class="level-left">
-              <input id="autoCompleteTextInput" type="text" class="input is-rounded is-large"/>
-            </div>
-            <div id="buttonContainer" class="level-right">
-             <input id="autoCompleteButtonInput"type="button" value="Discover" class="button is-large"></input> 
-            </div>
-            
-          </div>
-        </form>
+    <div id="content">
+      <div class="columns">
+        <div class="column is-half">
+          <!--Column Class-Responsiveness
+            mobile- is-full
+            talet- is-two-thirds
+            desktop- is-half
+          -->
+        </div>
       </div>
-
-      <div
-        id="resultsContainer"
-        class=""
-      >
-      </div>
-    </section>
+      <!--SearchBar-->
+      <!--
+      <div 
+      id="searchBar" class="field has-icons has-addon"></div>
+    -->
+      <!-- INPUT textarea
+      <input
+        id="autoCompleteTextInput"
+        class="input"
+        type="text"
+        placeholder="...type here to start search"
+      />
+    -->
+      <!-- Icon
+      <span  class="icon is-small is-left">
+        <i class="fa-solid fa-satellite-dish"></i> 
+      </span>
+    -->
+      <!-- Button
+      <p class="control">
+        <a id="autoCompleteButtonInput" class="button is-info is-light">
+          Discover
+        </a>
+      </p>
+    -->
+      <!--End SearchBar-->
+    </div>
     <script src="landingbackground.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
+<!---
+  1. Form addons#
+If you want to attach controls together, 
+  use the has-addons modifier on the field container:
+
+  <div class="field has-addons">
+    <div class="control">
+     <input class="input" type="text" placeholder="Find a repository">
+    </div>
+    <div class="control">
+      <a class="button is-info">
+        Search
+      </a>
+    </div>
+  </div>
+
+  2. Label Templete
+  
+      <label 
+        id="titleContainer" 
+        class="label 
+               is-large"
+               >
+        NASA IMAGE WIKI
+      </label>
+--->
