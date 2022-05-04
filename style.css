@@ -10,3 +10,6 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+#columnSearchBarContainer {
+  height: 100%;
+}
