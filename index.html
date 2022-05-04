@@ -10,26 +10,49 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="content">
-      <div class="columns">
-        <div class="column is-half">
-          <!--Column Class-Responsiveness
+      <!--SearchBar- Start-->
+      <div
+        id="columnSearchBarContainer"
+        class="container is-flex-direction-column is-align-items-center"
+      >
+        <!--Column Class-Responsiveness
             mobile- is-full
             talet- is-two-thirds
             desktop- is-half
           -->
+        <div class="field has-addons has-addons-centered box">
+          <p class="control has-icons-left has-text-right is-expanded">
+            <input
+              id="autoCompleteTextInput"
+              class="input is-medium"
+              type="text"
+              placeholder="...type here to start search"
+            />
+            <span class="icon is-medium is-left">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </span>
+          </p>
+          <div class="control">
+            <a class="button is-info is-medium"> Discover </a>
+          </div>
         </div>
+        <!--SearchBar- End -->
       </div>
-      <!--SearchBar-->
-      <!--
-      <div 
-      id="searchBar" class="field has-icons has-addon"></div>
+
+      <!-- Control Wrapper
+    <div class="control">
+
+    </div>
     -->
       <!-- INPUT textarea
       <input
