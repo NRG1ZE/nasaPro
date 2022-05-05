@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--Content Start -->
     <div id="content">
-      <!--SearchBar- Start-->
-      <div
-        id="columnSearchBarContainer"
-        class="container is-flex-direction-column is-align-items-center"
-      >
+      <!-- content is Main Container-->
+      <!--SearchBar - Start-->
+      <div id="SearchBarContainer" class="container">
         <!--Column Class-Responsiveness
             mobile- is-full
             talet- is-two-thirds
             desktop- is-half
           -->
+
         <div class="field has-addons has-addons-centered box">
           <p class="control has-icons-left has-text-right is-expanded">
             <input
@@ -46,9 +46,7 @@
             <a class="button is-info is-medium"> Discover </a>
           </div>
         </div>
-        <!--SearchBar- End -->
       </div>
-
       <!-- Control Wrapper
     <div class="control">
 
@@ -74,9 +72,20 @@
         </a>
       </p>
     -->
-      <!--End SearchBar-->
+      <!--SearchBar- End -->
+      <!--ResultsContainer Start-->
+      <div id="ResultsContainer" class="container">
+        <div class="box">
+          <h1>I Am Results</h1>
+        </div>
+      </div>
+
+      <!--End ResultsContainer-->
     </div>
+    <!--End Content-->
     <script src="landingbackground.js"></script>
+    <script src="utils.js"></script>
+    <script src="searchBar.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

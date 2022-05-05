@@ -16,10 +16,10 @@ const [website, YYYY, MM, DD] = [
 const Return = `${YYYY}` + "-" + `${MM}` + "-" + `${DD}`;
 console.log(Return);
 
-const fetchData = async () => {
+const fetchData = async (todaysDate) => {
   const response = await axios.get("https://api.nasa.gov/planetary/apod", {
     params: {
-      date: `${Return}`,
+      date: todaysDate,
       api_key: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
     },
   });
@@ -27,7 +27,7 @@ const fetchData = async () => {
   website.style.backgroundImage = `url(${response.data.hdurl})`;
   console.log(response.data);
 };
-fetchData();
+fetchData(`${Return}`);
 
 /*
 
