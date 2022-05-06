@@ -121,3 +121,63 @@ const fetchDataTest = async (searchTerm) => {
     card.appendChild(p);
   });
 };
+
+const runComparison = () => {
+  const leftSideStats = document.querySelectorAll(
+    "#left-summary .notification"
+  );
+  const rightSideStats = document.querySelectorAll(
+    "#right-summary .notification"
+  );
+
+  leftSideStats.forEach((leftStat, index) => {
+    const rightStat = rightSideStats[index];
+
+    const leftSideValue = leftStat.dataset.value;
+    const rightSideValue = rightStat.dataset.value;
+
+    if (rightSideValue > leftSideValue) {
+      leftStat.classList.remove("is-primary");
+      leftStat.classList.add("is-warning");
+    } else {
+      rightStat.classList.remove("is-primary");
+      rightStat.classList.add("is-warning");
+    }
+  });
+};
+
+const movieTemplate = (movieDetail) => {
+  const dollars = parseInt(
+    movieDetail.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
+  );
+  const metascore = parseInt(movieDetail.Metascore);
+  const imdbRating = parseFloat(movieDetail.imdbRating);
+  const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ""));
+  const awards = movieDetail.Awards.split(" ").reduce((prev, word) => {
+    const value = parseInt(word);
+
+    if (isNaN(value)) {
+      return prev;
+    } else {
+      return prev + value;
+    }
+  }, 0);
+
+  return ``;
+  /**
+   * Reconfige
+    <article class="media">
+      <figure class="media-left">
+        <p class="image">
+          <img src="${movieDetail.Poster}" />
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <h1>${movieDetail.Title}</h1>
+          <h4>${movieDetail.Genre}</h4>
+          <p>${movieDetail.Plot}</p>
+        </div>
+      </div>
+    </article> */
+};

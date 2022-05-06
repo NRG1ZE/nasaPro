@@ -1,7 +1,7 @@
 console.log("connected");
 
 const autoCompleteConfig = {
-  renderOption(Image) {
+  renderText(Image) {
     const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
     return `
       <img src="${imgSrc}" />
@@ -16,92 +16,51 @@ const autoCompleteConfig = {
       "https://images-api.nasa.gov" + "/search",
       {
         params: {
-          apikey: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
           s: searchTerm,
+        },
+        auth: {
+          api_key: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
         },
       }
     );
+    /**const fetchDataFromNASA = async (inputKeyword) => {
+  const response = await axios.get(root + searchEndPoint, {
+    params: {
+      q: inputKeyword,
+      media_type: "image",
+    },
+    
+  });
 
+  console.log(response.data);
+}; */
     if (response.data.Error) {
       return [];
     }
     /**RETURN for Request */
-    return response.data.Search;
+    return response.data;
   },
 };
 //Root Param selects where to render auto complete
 createAutoComplete({
   ...autoCompleteConfig,
   root: document.querySelector("#SearchField"),
-  onOptionSelect(movie) {
-    onMovieSelect(movie, document.querySelector("#left-summary"), "left");
+  onOptionSelect(searchTerm) {
+    onKeywordSelect(searchTerm, document.querySelector("#SummaryInput"));
   },
 });
 
-let leftMovie;
-let rightMovie;
-const onMovieSelect = async (movie, summaryElement, side) => {
-  const response = await axios.get("http://www.omdbapi.com/", {
+const onKeywordSelect = async (searchTerm, summaryElement) => {
+  const response = await axios.get("http://www.placeholder.com/", {
     params: {
-      apikey: "d9835cc5",
-      i: movie.imdbID,
+      apikey: "placeholder",
+      q: searchTerm,
     },
   });
 
-  summaryElement.innerHTML = movieTemplate(response.data);
-
-  if (side === "left") {
-    leftMovie = response.data;
-  } else {
-    rightMovie = response.data;
-  }
-
-  if (leftMovie && rightMovie) {
-    runComparison();
-  }
+  summaryElement.innerHTML = imageTemplate(response.data);
 };
-
-const runComparison = () => {
-  const leftSideStats = document.querySelectorAll(
-    "#left-summary .notification"
-  );
-  const rightSideStats = document.querySelectorAll(
-    "#right-summary .notification"
-  );
-
-  leftSideStats.forEach((leftStat, index) => {
-    const rightStat = rightSideStats[index];
-
-    const leftSideValue = leftStat.dataset.value;
-    const rightSideValue = rightStat.dataset.value;
-
-    if (rightSideValue > leftSideValue) {
-      leftStat.classList.remove("is-primary");
-      leftStat.classList.add("is-warning");
-    } else {
-      rightStat.classList.remove("is-primary");
-      rightStat.classList.add("is-warning");
-    }
-  });
-};
-
-const movieTemplate = (movieDetail) => {
-  const dollars = parseInt(
-    movieDetail.BoxOffice.replace(/\$/g, "").replace(/,/g, "")
-  );
-  const metascore = parseInt(movieDetail.Metascore);
-  const imdbRating = parseFloat(movieDetail.imdbRating);
-  const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ""));
-  const awards = movieDetail.Awards.split(" ").reduce((prev, word) => {
-    const value = parseInt(word);
-
-    if (isNaN(value)) {
-      return prev;
-    } else {
-      return prev + value;
-    }
-  }, 0);
-
+const imageTemplate = (movieDetail) => {
   return ``;
   /**
    * Reconfige
