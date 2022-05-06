@@ -16,7 +16,7 @@ const [website, YYYY, MM, DD] = [
 const Return = `${YYYY}` + "-" + `${MM}` + "-" + `${DD}`;
 console.log(Return);
 
-const fetchData = async (todaysDate) => {
+const fetchDataFromAPOD = async (todaysDate) => {
   const response = await axios.get("https://api.nasa.gov/planetary/apod", {
     params: {
       date: todaysDate,
@@ -27,9 +27,5 @@ const fetchData = async (todaysDate) => {
   website.style.backgroundImage = `url(${response.data.hdurl})`;
   console.log(response.data);
 };
-fetchData(`${Return}`);
 
-/*
-
-Further objective to establish responsiveness for the primary structur of the Document
-*/
+fetchDataFromAPOD(`${Return}`);
