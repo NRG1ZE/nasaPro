@@ -24,12 +24,12 @@
       <!-- content is Main Container-->
       <!--SearchBar - Start-->
       <div id="SearchBarContainer" class="container">
-        <!--Column Class-Responsiveness
-            mobile- is-full
-            talet- is-two-thirds
-            desktop- is-half
-          -->
+        <!--Column Class-Responsiveness => mobile="is-full",tablet="is-two-thirds", and desktop ="is-half" -->
 
+        <div class="box">
+          <h1>NASA IMAGE WIKI</h1>
+        </div>
+        <div id="SearchField" class="box"></div>
         <div class="field has-addons has-addons-centered box">
           <p class="control has-icons-left has-text-right is-expanded">
             <input
@@ -46,41 +46,16 @@
             <a class="button is-info is-medium"> Discover </a>
           </div>
         </div>
-      </div>
-      <!-- Control Wrapper
-    <div class="control">
-
-    </div>
-    -->
-      <!-- INPUT textarea
-      <input
-        id="autoCompleteTextInput"
-        class="input"
-        type="text"
-        placeholder="...type here to start search"
-      />
-    -->
-      <!-- Icon
-      <span  class="icon is-small is-left">
-        <i class="fa-solid fa-satellite-dish"></i> 
-      </span>
-    -->
-      <!-- Button
-      <p class="control">
-        <a id="autoCompleteButtonInput" class="button is-info is-light">
-          Discover
-        </a>
-      </p>
-    -->
-      <!--SearchBar- End -->
-      <!--ResultsContainer Start-->
-      <div id="ResultsContainer" class="container">
-        <div class="box">
-          <h1>I Am Results</h1>
+        <!--ResultsContainer Start-->
+        <div id="ResultsContainer" class="box">
+          <div class="box">
+            <h1>I Am Results</h1>
+          </div>
         </div>
+        <!--End ResultsContainer-->
       </div>
 
-      <!--End ResultsContainer-->
+      <!--SearchBar- End -->
     </div>
     <!--End Content-->
     <script src="landingbackground.js"></script>
@@ -114,4 +89,26 @@ If you want to attach controls together,
                >
         NASA IMAGE WIKI
       </label>
+---------Template for Bulma Search field w/ icon and button
+ Control Wrapper
+    <div class="control">
+
+    </div>
+     INPUT textarea
+      <input
+        id="autoCompleteTextInput"
+        class="input"
+        type="text"
+        placeholder="...type here to start search"
+      />
+     Icon
+      <span  class="icon is-small is-left">
+        <i class="fa-solid fa-satellite-dish"></i> 
+      </span>
+     Button
+      <p class="control">
+        <a id="autoCompleteButtonInput" class="button is-info is-light">
+          Discover
+        </a>
+      </p>
 --->
