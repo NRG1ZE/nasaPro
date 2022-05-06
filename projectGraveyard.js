@@ -96,3 +96,28 @@ poses beside th"`,
 // scale-down
 
 //"url('apod.nasa.gov/apod/image/2204/Apollo-16-station-10crop1110.jpg')";
+
+const fetchDataTest = async (searchTerm) => {
+  const response = await axios.get(BASEURL + SEARCHEND, {
+    params: {
+      q: searchTerm,
+    },
+  });
+  console.log(response.data);
+  const firstCard = response.data.data[0];
+  console.log(firstCard);
+  const tester = document.querySelector("#testdiv");
+  const card = document.createElement("div");
+  const imageSource = firstCard.image_uris.small;
+  //card.innerHTML = ` <img src="${imageSource}"/>`;
+  tester.appendChild(card);
+  const images = Object.keys(firstCard.image_uris);
+  images.forEach((prop) => {
+    const img = document.createElement("img");
+    const p = document.createElement("p");
+    p.innerText = prop;
+    img.src = firstCard.image_uris[prop];
+    card.appendChild(img);
+    card.appendChild(p);
+  });
+};

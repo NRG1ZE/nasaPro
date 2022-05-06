@@ -12,26 +12,28 @@ const autoCompleteConfig = {
     return movie.Title;
   },
   async fetchData(searchTerm) {
-    const response = await axios.get("http://www.omdbapi.com/", {
-      params: {
-        apikey: "d9835cc5",
-        s: searchTerm,
-      },
-    });
+    const response = await axios.get(
+      "https://images-api.nasa.gov" + "/search",
+      {
+        params: {
+          apikey: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
+          s: searchTerm,
+        },
+      }
+    );
 
     if (response.data.Error) {
       return [];
     }
-
+    /**RETURN for Request */
     return response.data.Search;
   },
 };
 //Root Param selects where to render auto complete
 createAutoComplete({
   ...autoCompleteConfig,
-  root: document.querySelector("#left-autocomplete"),
+  root: document.querySelector("#SearchField"),
   onOptionSelect(movie) {
-    document.querySelector(".tutorial").classList.add("is-hidden");
     onMovieSelect(movie, document.querySelector("#left-summary"), "left");
   },
 });
@@ -100,7 +102,9 @@ const movieTemplate = (movieDetail) => {
     }
   }, 0);
 
-  return `
+  return ``;
+  /**
+   * Reconfige
     <article class="media">
       <figure class="media-left">
         <p class="image">
@@ -114,27 +118,5 @@ const movieTemplate = (movieDetail) => {
           <p>${movieDetail.Plot}</p>
         </div>
       </div>
-    </article>
-
-    <article data-value=${awards} class="notification is-primary">
-      <p class="title">${movieDetail.Awards}</p>
-      <p class="subtitle">Awards</p>
-    </article>
-    <article data-value=${dollars} class="notification is-primary">
-      <p class="title">${movieDetail.BoxOffice}</p>
-      <p class="subtitle">Box Office</p>
-    </article>
-    <article data-value=${metascore} class="notification is-primary">
-      <p class="title">${movieDetail.Metascore}</p>
-      <p class="subtitle">Metascore</p>
-    </article>
-    <article data-value=${imdbRating} class="notification is-primary">
-      <p class="title">${movieDetail.imdbRating}</p>
-      <p class="subtitle">IMDB Rating</p>
-    </article>
-    <article data-value=${imdbVotes} class="notification is-primary">
-      <p class="title">${movieDetail.imdbVotes}</p>
-      <p class="subtitle">IMDB Votes</p>
-    </article>
-  `;
+    </article> */
 };
