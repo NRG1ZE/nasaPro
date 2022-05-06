@@ -25,7 +25,7 @@ const fetchDataFromAPOD = async (todaysDate) => {
   });
 
   website.style.backgroundImage = `url(${response.data.hdurl})`;
-  console.log(response.data);
+  console.log("responseURLforbackground:", response.data.hdurl);
 };
 
 fetchDataFromAPOD(`${Return}`);
