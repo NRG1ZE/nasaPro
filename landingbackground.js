@@ -14,18 +14,22 @@ const [website, YYYY, MM, DD] = [
   today.getDate(),
 ];
 const Return = `${YYYY}` + "-" + `${MM}` + "-" + `${DD}`;
+
+//default date if media type is video
+const workingImage = `2022-05-08`;
 console.log(Return);
 
 const fetchDataFromAPOD = async (todaysDate) => {
   const response = await axios.get("https://api.nasa.gov/planetary/apod", {
     params: {
       date: todaysDate,
+      //date:todaysDate
       api_key: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
     },
   });
 
   website.style.backgroundImage = `url(${response.data.hdurl})`;
-  console.log("responseURLforbackground:", response.data.hdurl);
+  console.log("responseURLforbackground:", response.data);
 };
 
 fetchDataFromAPOD(`${Return}`);
