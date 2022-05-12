@@ -28,7 +28,7 @@ keywords (optional) -string- Terms to search for in “Keywords” fields. Separ
 location (optional) -string- Terms to search for in “Location” fields.
 media_type(optional) -string- Media types to restrict the search to. Available types: [“image”, “audio”]. Separate multiple values with commas.
 nasa_id (optional) -string- The media asset’s NASA ID.
-page (optional) integer Page number, starting at 1, of results to get.
+page (optional) -integer- Page number, starting at 1, of results to get.
 photographer(optional)-string- The primary photographer’s name.
 secondary_creator(optional)-string- A secondary photographer/videographer’s name.
 title (optional) -string- Terms to search for in “Title” fields.
@@ -49,14 +49,15 @@ const albumEndPoint = `/album/'${album_name}'`;
 const fetchDataFromNASA = async (inputKeyword) => {
   const response = await axios.get(root + searchEndPoint, {
     params: {
-      title: inputKeyword,
+      keywords: inputKeyword,
       media_type: "image",
     },
     auth: {
       api_key: "SMcnNJzngrlKyVH47b06X49rp9kacFz3A8xqmdtp",
     },
   });
-
-  console.log("utils return:", response.data);
+  console.log("utils return:", response);
+  let responseCollection = response.data.collection;
+  console.log(responseCollection);
 };
-fetchDataFromNASA("mo");
+fetchDataFromNASA("m");
