@@ -1,8 +1,8 @@
 console.log("connected");
 
 const autoCompleteConfig = {
-  renderText(Image) {
-    const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
+  renderText(Text) {
+    const innerHTML = movie.Poster === "N/A" ? "" : movie.Poster;
     return `
       <img src="${imgSrc}" />
       ${movie.Title} (${movie.Year})
@@ -57,10 +57,11 @@ const onKeywordSelect = async (searchTerm, summaryElement) => {
       q: searchTerm,
     },
   });
-
+  //------TODO update summary element endpointq
   summaryElement.innerHTML = imageTemplate(response.data);
 };
-const imageTemplate = (movieDetail) => {
+const imageTemplate = (searchDetail) => {
+  console.log("in image return", { searchDetail });
   return ``;
   /**
    * Reconfige
