@@ -9,35 +9,7 @@ const createAutoComplete = ({
   inputValue,
   fetchData,
 }) => {
-  /*
-  Confige root.innerHTML = to current form
-
-        <div class="field has-addons has-addons-centered">
-          <p class="control has-icons-left has-text-right is-expanded">
-            <input
-              id="autoCompleteTextInput"
-              class="input is-medium"
-              type="text"
-              placeholder="...type here to start search"
-            />
-            <span class="icon is-medium is-left">
-              <i class="fa-solid fa-satellite-dish"></i>
-            </span>
-          </p>
-          <div class="control">
-            <a class="button is-info is-medium"> Discover </a>
-          </div>
-        </div> 
-        
-        
-        <label><b>Search</b></label>
-    <input class="input" />
-    <div class="dropdown">
-      <div class="dropdown-menu">
-        <div class="dropdown-content results"></div>
-      </div>
-    </div>
-  */
+  
   root.innerHTML = `
   <div class="field has-addons has-addons-centered is-grouped-multiline">
   <p id= "InputField" class="control has-icons-left has-text-right is-expanded">

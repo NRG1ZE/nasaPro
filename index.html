@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
     />
+    <!--Link for Bulma framework ^^^ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -15,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <!--Link for Icons ^^^ -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -25,46 +26,83 @@
       <!--SearchBar - Start-->
       <div id="SearchBarContainer" class="container">
         <!--Column Class-Responsiveness => mobile="is-full",tablet="is-two-thirds", and desktop ="is-half" -->
-
-        <div class="box">
-          <h1>NASA IMAGE WIKI</h1>
+        <div id="SearchField" class="box">
+          <!--TEST BOX FOR innerHTML insert-->
         </div>
-        <div id="SearchField" class="box"></div>
-        <div class="field has-addons has-addons-centered box">
-          <p class="control has-icons-left has-text-right is-expanded">
+        <div class="field has-addons has-addons-centered box combobox-wrapper">
+          <div
+            class="control has-icons-left has-text-right is-expanded"
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="intResults-listbox"
+            aria-haspopup="listbox"
+            id="ex2-combobox"
+          >
             <input
-              id="autoCompleteTextInput"
-              class="input is-medium"
               type="text"
+              aria-autocomplete="list"
+              aria-controls="intResults-listbox"
+              aria-labelledby="ex2-label"
+              id="search-input"
+              class="input is-medium"
               placeholder="...type here to start search"
             />
+
             <span class="icon is-medium is-left">
               <i class="fa-solid fa-satellite-dish"></i>
             </span>
-          </p>
+            <ul
+              aria-labelledby="ex2-label"
+              role="listbox"
+              id="intResults-listbox"
+              class="listbox hidden"
+            ></ul>
+          </div>
+
           <div class="control">
             <a class="button is-info is-medium"> Discover </a>
           </div>
-        </div>
-        <!--ResultsContainer Start-->
-        <div id="ResultsContainer" class="box">
-          <div class="box">
-            <h1>I Am Results</h1>
+          <!--
+          <label id="ex2-label" class="combobox-label">
+            Choice 2 Fruit or Vegetable
+          </label>
+          <div class="combobox-wrapper">
+            <div role="combobox"
+                 aria-expanded="false"
+                 aria-owns="ex2-listbox"
+                 aria-haspopup="listbox"
+                 id="ex2-combobox">
+              <input type="text"
+                     aria-autocomplete="list"
+                     aria-controls="ex2-listbox"
+                     aria-labelledby="ex2-label"
+                     id="ex2-input">
+            </div>
+            <ul aria-labelledby="ex2-label"
+                role="listbox"
+                id="ex2-listbox"
+                class="listbox hidden">
+            </ul>
           </div>
+          -->
         </div>
-        <!--End ResultsContainer-->
       </div>
-
+      <!--ResultsContainer Start- <div id="ResultsContainer"> -->
+      <!--End ResultsContainer- </div> -->
       <!--SearchBar- End -->
     </div>
     <!--End Content-->
+    <!--Start script-->
     <script src="landingbackground.js"></script>
     <script src="utils.js"></script>
     <script src="searchBar.js"></script>
     <script src="index.js"></script>
+    <script src="listbox-combobox.js"></script>
+    <script src="listbox-combo-example.js"></script>
   </body>
 </html>
-<!---
+
+<!--- !templates
   1. Form addons#
 If you want to attach controls together, 
   use the has-addons modifier on the field container:
@@ -111,4 +149,34 @@ If you want to attach controls together,
           Discover
         </a>
       </p>
+
+      ---------ARIA w3c widget
+
+
+      <div class="combobox-wrapper">
+            <div
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="ex2-listbox"
+              aria-haspopup="listbox"
+              id="ex2-combobox"
+            >
+              
+              <input
+                type="text"
+                aria-autocomplete="list"
+                aria-controls="ex2-listbox"
+                aria-labelledby="ex2-label"
+                id="ex2-input"
+                class="input is-medium"
+              />
+              
+            </div>
+            <ul
+              aria-labelledby="ex2-label"
+              role="listbox"
+              id="ex2-listbox"
+              class="listbox hidden"
+            ></ul>
+          </div>
 --->

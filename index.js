@@ -23,17 +23,7 @@ const autoCompleteConfig = {
         },
       }
     );
-    /**const fetchDataFromNASA = async (inputKeyword) => {
-  const response = await axios.get(root + searchEndPoint, {
-    params: {
-      q: inputKeyword,
-      media_type: "image",
-    },
-    
-  });
 
-  console.log(response.data);
-}; */
     if (response.data.Error) {
       return [];
     }
@@ -60,22 +50,7 @@ const onKeywordSelect = async (searchTerm, summaryElement) => {
 
   summaryElement.innerHTML = imageTemplate(response.data);
 };
-const imageTemplate = (movieDetail) => {
+const imageTemplate = (textDetail) => {
+  console.log("imageTemplate", { textDetail });
   return ``;
-  /**
-   * Reconfige
-    <article class="media">
-      <figure class="media-left">
-        <p class="image">
-          <img src="${movieDetail.Poster}" />
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <h1>${movieDetail.Title}</h1>
-          <h4>${movieDetail.Genre}</h4>
-          <p>${movieDetail.Plot}</p>
-        </div>
-      </div>
-    </article> */
 };
